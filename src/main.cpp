@@ -9,7 +9,7 @@ using namespace daisysp;
 DaisyPod   hw;
 Oscillator osc;
 Parameter  p_freq;
-Parameter p_knob1, p_knob2;
+
 uint8_t waveforms[NUM_WAVEFORMS] = {
     Oscillator::WAVE_SIN,
     Oscillator::WAVE_TRI,
@@ -21,7 +21,7 @@ static float freq;
 float        sig;
 static int   waveform, octave;
 
-static void AudioCallback(float *in, float *out, ssize_t size)
+static void AudioCallback(float *in, float *out, size_t size)
 {
     hw.DebounceControls();
 
@@ -71,19 +71,9 @@ int main(void)
     samplerate = hw.AudioSampleRate();
     InitSynth(samplerate);
 
-
     // start callbacks
     hw.StartAdc();
     hw.StartAudio(AudioCallback);
-    float value1, value2 = 0;
-    p_knob1.Init(hw.knob1, 0, 1, Parameter::LINEAR);
-    p_knob2.Init(hw.knob2, 0, 1, Parameter::LINEAR);
 
-    while(1) {
-        value1 = p_knob1.Process();
-        value2 = p_knob2.Process();
-        hw.led1.Set(value1, 127-value2, 0);
-        hw.led2.Set(value1, 127-value2, 0);
-        hw.UpdateLeds();
-    }
+    while(1) {}
 }
