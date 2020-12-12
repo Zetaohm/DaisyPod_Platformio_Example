@@ -1,0 +1,15 @@
+{
+  "name": "tool-unity",
+  "version": "1.20500.200612",
+  "description": "A lightweight unit testing framework for embedded software",
+  "keywords": [
+    "unit testing",
+    "tools"
+  ],
+  "homepage": "http://www.throwtheswitch.org/unity",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThrowTheSwitch/Unity"
+  }
+}

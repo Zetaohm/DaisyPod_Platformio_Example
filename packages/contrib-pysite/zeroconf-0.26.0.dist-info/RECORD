@@ -1,0 +1,11 @@
+zeroconf-0.26.0.dist-info/COPYING,sha256=uxF8D71_V_ZBcLaQKF198HwjcbV447PNOqLhFV70YaA,24390
+zeroconf-0.26.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+zeroconf-0.26.0.dist-info/METADATA,sha256=tYem9qnE2Gu7o_ZUjP4wT8bjlyD_He15Ze8e7E1EipA,15328
+zeroconf-0.26.0.dist-info/RECORD,,
+zeroconf-0.26.0.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zeroconf-0.26.0.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+zeroconf-0.26.0.dist-info/top_level.txt,sha256=G_yoNgGm6QMZZpH139yjBdEQpn-jCn0EN5Zvy0kJuII,9
+zeroconf.py,sha256=YOljJ6ykGrmuyaZbh8Iiun9S9vS_jo1QchjFXJcoWEw,78392
+zeroconf/__init__.py,sha256=Zu3IF0o55uPS8NMJzWqnNhFFImbxWqNWlOZC7mMJRmU,99609
+zeroconf/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zeroconf/test.py,sha256=yhBYN1XYuF5LPhQ3vvPOqDvfRPDYumuEQDTxOOZ9dRI,53705

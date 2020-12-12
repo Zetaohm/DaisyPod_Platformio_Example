@@ -1,0 +1,15 @@
+{
+  "name": "framework-cmsis",
+  "version": "2.50501.200527",
+  "description": "Vendor-independent hardware abstraction layer for the Cortex-M processor series",
+  "keywords": [
+    "framework",
+    "arm"
+  ],
+  "homepage": "http://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ARM-software/CMSIS_5"
+  }
+}

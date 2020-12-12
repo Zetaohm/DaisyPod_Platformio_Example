@@ -1,0 +1,12 @@
+{
+  "name": "tool-ldscripts-ststm32",
+  "version": "0.1.0",
+  "description": "Linker scripts pack for STMicroelectronics STM32 platform",
+  "keywords": [
+    "linker scripts",
+    "stmicroelectronics",
+    "stm32"
+  ],
+  "homepage": "https://www.st.com/en/development-tools/stm32cubemx.html",
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "framework-cmsis-stm32h7",
+  "version": "1.8.0",
+  "description": "CMSIS component for the STMicroelectronics STM32H7 series",
+  "keywords": [
+    "framework",
+    "stmicroelectronics",
+    "stm32"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/STMicroelectronics/cmsis_device_h7"
+  }
+}

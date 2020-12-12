@@ -1,0 +1,1 @@
+{"name": "contrib-pysite", "version": "2.38.201019", "system": "darwin_x86_64", "description": "Extra Python package for PlatformIO Core", "keywords": ["platformio", "platformio-core"], "homepage": "https://docs.platformio.org/page/core/index.html", "repository": {"type": "git", "url": "https://github.com/platformio/platformio-core"}}
