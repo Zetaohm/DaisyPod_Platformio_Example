@@ -26,8 +26,8 @@ extern "C" {
    sure here. */
 #undef basename
 #define basename __xpg_basename
-char      *basename (char *) __asm__(__ASMNAME("basename"));
-char      *dirname (char *);
+char      *_EXFUN(basename,     (char *)) __asm__(__ASMNAME("basename"));
+char      *_EXFUN(dirname,     (char *));
 
 #ifdef __cplusplus
 }

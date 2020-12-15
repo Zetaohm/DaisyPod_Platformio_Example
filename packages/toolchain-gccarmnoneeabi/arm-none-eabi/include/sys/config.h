@@ -108,7 +108,7 @@
 #define _POINTER_INT short
 #endif
 
-#if defined(__v850) && !defined(__rtems__)
+#ifdef __v850
 #define __ATTRIBUTE_IMPURE_PTR__ __attribute__((__sda__))
 #endif
 

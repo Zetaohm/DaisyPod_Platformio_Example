@@ -44,34 +44,34 @@
 #define ICONV_NLS_FROM 0
 #define ICONV_NLS_TO   1
 
-void
-_iconv_nls_get_state (iconv_t cd, mbstate_t *ps, int direction);
+_VOID
+_EXFUN(_iconv_nls_get_state, (iconv_t cd, mbstate_t *ps, int direction));
 
 int
-_iconv_nls_set_state (iconv_t cd, mbstate_t *ps, int direction);
+_EXFUN(_iconv_nls_set_state, (iconv_t cd, mbstate_t *ps, int direction));
 
 int
-_iconv_nls_is_stateful (iconv_t cd, int direction);
+_EXFUN(_iconv_nls_is_stateful, (iconv_t cd, int direction));
 
 int
-_iconv_nls_get_mb_cur_max (iconv_t cd, int direction);
+_EXFUN(_iconv_nls_get_mb_cur_max, (iconv_t cd, int direction));
 
 size_t
-_iconv_nls_conv (struct _reent *rptr, iconv_t cd,
-                        const char **inbuf, size_t *inbytesleft,
-                        char **outbuf, size_t *outbytesleft);
+_EXFUN(_iconv_nls_conv, (struct _reent *rptr, iconv_t cd,
+                        _CONST char **inbuf, size_t *inbytesleft,
+                        char **outbuf, size_t *outbytesleft));
 
-const char *
-_iconv_nls_construct_filename (struct _reent *rptr, const char *file,
-                                      const char *dir, const char *ext);
+_CONST char *
+_EXFUN(_iconv_nls_construct_filename, (struct _reent *rptr, _CONST char *file,
+                                      _CONST char *dir, _CONST char *ext));
 
 
 int
-_iconv_nls_open (struct _reent *rptr, const char *encoding,
-                        iconv_t *towc, iconv_t *fromwc, int flag);
+_EXFUN(_iconv_nls_open, (struct _reent *rptr, _CONST char *encoding,
+                        iconv_t *towc, iconv_t *fromwc, int flag));
 
 char *
-_iconv_resolve_encoding_name (struct _reent *rptr, const char *ca);
+_EXFUN(_iconv_resolve_encoding_name, (struct _reent *rptr, _CONST char *ca));
 
 #endif /* __SYS_ICONVNLS_H__ */
 

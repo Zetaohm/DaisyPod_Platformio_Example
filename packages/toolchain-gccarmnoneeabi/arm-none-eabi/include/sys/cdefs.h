@@ -3,8 +3,6 @@
 /* Written 2000 by Werner Almesberger */
 
 /*-
- * SPDX-License-Identifier: BSD-3-Clause
- *
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
  *
@@ -227,6 +225,17 @@
  * for a given compiler, let the compile fail if it is told to use
  * a feature that we cannot live without.
  */
+#ifdef lint
+#define	__dead2
+#define	__pure2
+#define	__unused
+#define	__packed
+#define	__aligned(x)
+#define	__alloc_align(x)
+#define	__alloc_size(x)
+#define	__section(x)
+#define	__weak_symbol
+#else
 #define	__weak_symbol	__attribute__((__weak__))
 #if !__GNUC_PREREQ__(2, 5) && !defined(__INTEL_COMPILER)
 #define	__dead2
@@ -250,16 +259,15 @@
 #endif
 #if __GNUC_PREREQ__(4, 3) || __has_attribute(__alloc_size__)
 #define	__alloc_size(x)	__attribute__((__alloc_size__(x)))
-#define	__alloc_size2(n, x)	__attribute__((__alloc_size__(n, x)))
 #else
 #define	__alloc_size(x)
-#define	__alloc_size2(n, x)
 #endif
 #if __GNUC_PREREQ__(4, 9) || __has_attribute(__alloc_align__)
 #define	__alloc_align(x)	__attribute__((__alloc_align__(x)))
 #else
 #define	__alloc_align(x)
 #endif
+#endif /* lint */
 
 #if !__GNUC_PREREQ__(2, 95)
 #define	__alignof(x)	__offsetof(struct { char __a; x __b; }, __b)
@@ -269,7 +277,7 @@
  * Keywords added in C11.
  */
 
-#if !defined(__STDC_VERSION__) || __STDC_VERSION__ < 201112L
+#if !defined(__STDC_VERSION__) || __STDC_VERSION__ < 201112L || defined(lint)
 
 #if !__has_extension(c_alignas)
 #if (defined(__cplusplus) && __cplusplus >= 201103L) || \
@@ -306,7 +314,7 @@
 #if (defined(__cplusplus) && __cplusplus >= 201103L) || \
     __has_extension(cxx_static_assert)
 #define	_Static_assert(x, y)	static_assert(x, y)
-#elif __GNUC_PREREQ__(4,6) && !defined(__cplusplus)
+#elif __GNUC_PREREQ__(4,6)
 /* Nothing, gcc 4.6 and higher has _Static_assert built-in */
 #elif defined(__COUNTER__)
 #define	_Static_assert(x, y)	__Static_assert(x, __COUNTER__)
@@ -377,7 +385,7 @@
 #endif
 
 #if __GNUC_PREREQ__(3, 1) || (defined(__INTEL_COMPILER) && __INTEL_COMPILER >= 800)
-#define	__always_inline	__inline__ __attribute__((__always_inline__))
+#define	__always_inline	__attribute__((__always_inline__))
 #else
 #define	__always_inline
 #endif
@@ -389,7 +397,7 @@
 #endif
 
 #if __GNUC_PREREQ__(3, 3)
-#define	__nonnull(x)	__attribute__((__nonnull__ x))
+#define	__nonnull(x)	__attribute__((__nonnull__(x)))
 #define	__nonnull_all	__attribute__((__nonnull__))
 #else
 #define	__nonnull(x)
@@ -428,7 +436,7 @@
  * software that is unaware of C99 keywords.
  */
 #if !(__GNUC__ == 2 && __GNUC_MINOR__ == 95)
-#if !defined(__STDC_VERSION__) || __STDC_VERSION__ < 199901
+#if !defined(__STDC_VERSION__) || __STDC_VERSION__ < 199901 || defined(lint)
 #define	__restrict
 #else
 #define	__restrict	restrict
@@ -644,7 +652,7 @@
  */
 
 #if __has_attribute(__argument_with_type_tag__) && \
-    __has_attribute(__type_tag_for_datatype__)
+    __has_attribute(__type_tag_for_datatype__) && !defined(lint)
 #define	__arg_type_tag(arg_kind, arg_idx, type_tag_idx) \
 	    __attribute__((__argument_with_type_tag__(arg_kind, arg_idx, type_tag_idx)))
 #define	__datatype_type_tag(kind, type) \

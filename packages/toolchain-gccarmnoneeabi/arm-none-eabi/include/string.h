@@ -26,30 +26,30 @@
 
 _BEGIN_STD_C
 
-void *	 memchr (const void *, int, size_t);
-int 	 memcmp (const void *, const void *, size_t);
-void *	 memcpy (void *__restrict, const void *__restrict, size_t);
-void *	 memmove (void *, const void *, size_t);
-void *	 memset (void *, int, size_t);
-char 	*strcat (char *__restrict, const char *__restrict);
-char 	*strchr (const char *, int);
-int	 strcmp (const char *, const char *);
-int	 strcoll (const char *, const char *);
-char 	*strcpy (char *__restrict, const char *__restrict);
-size_t	 strcspn (const char *, const char *);
-char 	*strerror (int);
-size_t	 strlen (const char *);
-char 	*strncat (char *__restrict, const char *__restrict, size_t);
-int	 strncmp (const char *, const char *, size_t);
-char 	*strncpy (char *__restrict, const char *__restrict, size_t);
-char 	*strpbrk (const char *, const char *);
-char 	*strrchr (const char *, int);
-size_t	 strspn (const char *, const char *);
-char 	*strstr (const char *, const char *);
+_PTR 	 _EXFUN(memchr,(const _PTR, int, size_t));
+int 	 _EXFUN(memcmp,(const _PTR, const _PTR, size_t));
+_PTR 	 _EXFUN(memcpy,(_PTR __restrict, const _PTR __restrict, size_t));
+_PTR	 _EXFUN(memmove,(_PTR, const _PTR, size_t));
+_PTR	 _EXFUN(memset,(_PTR, int, size_t));
+char 	*_EXFUN(strcat,(char *__restrict, const char *__restrict));
+char 	*_EXFUN(strchr,(const char *, int));
+int	 _EXFUN(strcmp,(const char *, const char *));
+int	 _EXFUN(strcoll,(const char *, const char *));
+char 	*_EXFUN(strcpy,(char *__restrict, const char *__restrict));
+size_t	 _EXFUN(strcspn,(const char *, const char *));
+char 	*_EXFUN(strerror,(int));
+size_t	 _EXFUN(strlen,(const char *));
+char 	*_EXFUN(strncat,(char *__restrict, const char *__restrict, size_t));
+int	 _EXFUN(strncmp,(const char *, const char *, size_t));
+char 	*_EXFUN(strncpy,(char *__restrict, const char *__restrict, size_t));
+char 	*_EXFUN(strpbrk,(const char *, const char *));
+char 	*_EXFUN(strrchr,(const char *, int));
+size_t	 _EXFUN(strspn,(const char *, const char *));
+char 	*_EXFUN(strstr,(const char *, const char *));
 #ifndef _REENT_ONLY
-char 	*strtok (char *__restrict, const char *__restrict);
+char 	*_EXFUN(strtok,(char *__restrict, const char *__restrict));
 #endif
-size_t	 strxfrm (char *__restrict, const char *__restrict, size_t);
+size_t	 _EXFUN(strxfrm,(char *__restrict, const char *__restrict, size_t));
 
 #if __POSIX_VISIBLE >= 200809
 int	 strcoll_l (const char *, const char *, locale_t);
@@ -57,89 +57,89 @@ char	*strerror_l (int, locale_t);
 size_t	 strxfrm_l (char *__restrict, const char *__restrict, size_t, locale_t);
 #endif
 #if __MISC_VISIBLE || __POSIX_VISIBLE
-char 	*strtok_r (char *__restrict, const char *__restrict, char **__restrict);
+char 	*_EXFUN(strtok_r,(char *__restrict, const char *__restrict, char **__restrict));
 #endif
 #if __BSD_VISIBLE
-int	 timingsafe_bcmp (const void *, const void *, size_t);
-int	 timingsafe_memcmp (const void *, const void *, size_t);
+int	 _EXFUN(timingsafe_bcmp,(const void *, const void *, size_t));
+int	 _EXFUN(timingsafe_memcmp,(const void *, const void *, size_t));
 #endif
 #if __MISC_VISIBLE || __POSIX_VISIBLE
-void *	 memccpy (void *__restrict, const void *__restrict, int, size_t);
+_PTR	 _EXFUN(memccpy,(_PTR __restrict, const _PTR __restrict, int, size_t));
 #endif
 #if __GNU_VISIBLE
-void *	 mempcpy (void *, const void *, size_t);
-void *	 memmem (const void *, size_t, const void *, size_t);
-void *	 memrchr (const void *, int, size_t);
-void *	 rawmemchr (const void *, int);
+_PTR	 _EXFUN(mempcpy,(_PTR, const _PTR, size_t));
+_PTR	 _EXFUN(memmem, (const _PTR, size_t, const _PTR, size_t));
+_PTR 	 _EXFUN(memrchr,(const _PTR, int, size_t));
+_PTR 	 _EXFUN(rawmemchr,(const _PTR, int));
 #endif
 #if __POSIX_VISIBLE >= 200809
-char 	*stpcpy (char *__restrict, const char *__restrict);
-char 	*stpncpy (char *__restrict, const char *__restrict, size_t);
+char 	*_EXFUN(stpcpy,(char *__restrict, const char *__restrict));
+char 	*_EXFUN(stpncpy,(char *__restrict, const char *__restrict, size_t));
 #endif
 #if __GNU_VISIBLE
-char	*strcasestr (const char *, const char *);
-char 	*strchrnul (const char *, int);
+char	*_EXFUN(strcasestr,(const char *, const char *));
+char 	*_EXFUN(strchrnul,(const char *, int));
 #endif
 #if __MISC_VISIBLE || __POSIX_VISIBLE >= 200809 || __XSI_VISIBLE >= 4
-char 	*strdup (const char *) __malloc_like __result_use_check;
+char 	*_EXFUN(strdup,(const char *));
 #endif
-char 	*_strdup_r (struct _reent *, const char *);
+char 	*_EXFUN(_strdup_r,(struct _reent *, const char *));
 #if __POSIX_VISIBLE >= 200809
-char 	*strndup (const char *, size_t) __malloc_like __result_use_check;
+char 	*_EXFUN(strndup,(const char *, size_t));
 #endif
-char 	*_strndup_r (struct _reent *, const char *, size_t);
+char 	*_EXFUN(_strndup_r,(struct _reent *, const char *, size_t));
 
 /* There are two common strerror_r variants.  If you request
    _GNU_SOURCE, you get the GNU version; otherwise you get the POSIX
    version.  POSIX requires that #undef strerror_r will still let you
    invoke the underlying function, but that requires gcc support.  */
 #if __GNU_VISIBLE
-char	*strerror_r (int, char *, size_t);
+char	*_EXFUN(strerror_r,(int, char *, size_t));
 #elif __POSIX_VISIBLE >= 200112
 # ifdef __GNUC__
-int	strerror_r (int, char *, size_t)
+int	_EXFUN(strerror_r,(int, char *, size_t))
 #ifdef __ASMNAME
              __asm__ (__ASMNAME ("__xpg_strerror_r"))
 #endif
   ;
 # else
-int	__xpg_strerror_r (int, char *, size_t);
+int	_EXFUN(__xpg_strerror_r,(int, char *, size_t));
 #  define strerror_r __xpg_strerror_r
 # endif
 #endif
 
 /* Reentrant version of strerror.  */
-char *	_strerror_r (struct _reent *, int, int, int *);
+char *	_EXFUN(_strerror_r, (struct _reent *, int, int, int *));
 
 #if __BSD_VISIBLE
-size_t	strlcat (char *, const char *, size_t);
-size_t	strlcpy (char *, const char *, size_t);
+size_t	_EXFUN(strlcat,(char *, const char *, size_t));
+size_t	_EXFUN(strlcpy,(char *, const char *, size_t));
 #endif
 #if __POSIX_VISIBLE >= 200809
-size_t	 strnlen (const char *, size_t);
+size_t	 _EXFUN(strnlen,(const char *, size_t));
 #endif
 #if __BSD_VISIBLE
-char 	*strsep (char **, const char *);
+char 	*_EXFUN(strsep,(char **, const char *));
 #endif
 #if __BSD_VISIBLE
 char    *strnstr(const char *, const char *, size_t) __pure;
 #endif
 
 #if __MISC_VISIBLE
-char	*strlwr (char *);
-char	*strupr (char *);
+char	*_EXFUN(strlwr,(char *));
+char	*_EXFUN(strupr,(char *));
 #endif
 
 #ifndef DEFS_H	/* Kludge to work around problem compiling in gdb */
-char	*strsignal (int __signo);
+char	*_EXFUN(strsignal, (int __signo));
 #endif
 
 #ifdef __CYGWIN__
-int	strtosigno (const char *__name);
+int	_EXFUN(strtosigno, (const char *__name));
 #endif
 
 #if __GNU_VISIBLE
-int	 strverscmp (const char *, const char *);
+int	 _EXFUN(strverscmp,(const char *, const char *));
 #endif
 
 #if __GNU_VISIBLE && defined(__GNUC__)
@@ -169,15 +169,11 @@ int	 strverscmp (const char *, const char *);
    sure here. */
 #if __GNU_VISIBLE && !defined(basename)
 # define basename basename
-char	*__nonnull ((1)) basename (const char *) __asm__(__ASMNAME("__gnu_basename"));
+char	*_EXFUN(__nonnull (1) basename,(const char *)) __asm__(__ASMNAME("__gnu_basename"));
 #endif
 
 #include <sys/string.h>
 
 _END_STD_C
-
-#if __SSP_FORTIFY_LEVEL > 0
-#include <ssp/string.h>
-#endif
 
 #endif /* _STRING_H_ */

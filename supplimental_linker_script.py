@@ -6,5 +6,5 @@ env.Append(
         "-mfpu=fpv4-sp-d16"
   ]
 )
-print("running supplimental link script")    
+print("running supplimental linker script")    
 

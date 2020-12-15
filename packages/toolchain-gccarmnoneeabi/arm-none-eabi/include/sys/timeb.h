@@ -31,7 +31,7 @@ struct timeb
   short dstflag;
 };
 
-extern int ftime (struct timeb *);
+extern int ftime _PARAMS ((struct timeb *));
 
 #ifdef __cplusplus
 }
